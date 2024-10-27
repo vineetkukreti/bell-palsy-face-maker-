@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Detection - World Stroke Day 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .main-container {
+            background-color: #FFE4D6;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Reduced padding to accommodate larger logos */
+            margin-bottom: 20px;
+        }
+        .title-text {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .description-text {
+            text-align: center;
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .circular-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #666;
+            position: relative;
+        }
+
+        .circular-frame img {
+            position: absolute;
+            left: 40%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1.29); /* Center and zoom */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .warning-box {
+            background-color: #E65100;
+            color: white;
+            padding: 10px;
+            margin: 15px auto;
+            max-width: 400px;
+            text-align: center;
+        }
+        .be-fast-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .be-fast-letters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .be-fast-letter {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .be-fast-icons {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .be-fast-icon {
+            width: 80px;
+            text-align: center;
+        }
+        .be-fast-icon img {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 5px;
+        }
+        .share-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #D32F2F;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .center-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+        }
+        /* Method 1: Using flexbox (Recommended) */
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header Logos -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='world-stroke-day-logo.png') }}" alt="World Stroke Day" class="logo">
+            <img src="{{ url_for('static', filename='alteus-logo.png') }}" alt="Alteus" class="logo">
+        </div>
+
+        <!-- Title and Description -->
+        <div class="title-text">On this World Stroke Day 2024,</div>
+        <div class="description-text">
+            You can save a life of a person if you can detect whether they are suffering from stroke 
+            and take them to nearest neurologist Hospital to save their life.
+        </div>
+
+      <div style="text-align: center; margin-bottom: 15px;">
+        <div style="font-size: 20px; margin-bottom: 15px;">To Know about it, Take Selfie</div>
+        <div class="video-container">
+            <div class="circular-frame">
+                <img src="{{ url_for('video_feed') }}" alt="Real-time video">
+            </div>
+        </div>
+    </div>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <div>Your image with Face-drop is a common Sign</div>
+            <div>to recognize that the patient having Stroke</div>
+        </div>
+
+       
+        <div class="flex-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160">
+                <!-- Letters Row -->
+                <g transform="translate(15, 0)">
+                    <!-- B -->
+                    <circle cx="40" cy="25" r="18" fill="#E091E0"/>
+                    <text x="40" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">B</text>
+                    
+                    <!-- E -->
+                    <circle cx="95" cy="25" r="18" fill="#E091E0"/>
+                    <text x="95" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">E</text>
+                    
+                    <!-- F -->
+                    <circle cx="150" cy="25" r="18" fill="#90BE6D"/>
+                    <text x="150" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">F</text>
+                    
+                    <!-- A -->
+                    <circle cx="205" cy="25" r="18" fill="#90BE6D"/>
+                    <text x="205" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">A</text>
+                    
+                    <!-- S -->
+                    <circle cx="260" cy="25" r="18" fill="#90BE6D"/>
+                    <text x="260" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">S</text>
+                    
+                    <!-- T -->
+                    <circle cx="315" cy="25" r="18" fill="#90BE6D"/>
+                    <text x="315" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">T</text>
+                </g>
+            
+                <!-- Icons Row -->
+                <g transform="translate(15, 60)">
+                    <!-- Balance -->
+                    <rect x="15" y="0" width="50" height="50" fill="none" stroke="#E091E0" stroke-width="1.5" rx="6"/>
+                    <path d="M30 20 Q40 15, 50 20 M33 25 Q40 30, 47 25 M35 35 L45 35" stroke="#E091E0" fill="none" stroke-width="1.5"/>
+                    
+                    <!-- Eyes -->
+                    <rect x="70" y="0" width="50" height="50" fill="none" stroke="#E091E0" stroke-width="1.5" rx="6"/>
+                    <path d="M85 25 Q95 15, 105 25" stroke="#E091E0" fill="none" stroke-width="1.5"/>
+                    <line x1="85" y1="25" x2="105" y2="15" stroke="#E091E0" stroke-width="1.5"/>
+                    
+                    <!-- Face -->
+                    <rect x="125" y="0" width="50" height="50" fill="none" stroke="#90BE6D" stroke-width="1.5" rx="6"/>
+                    <path d="M140 20 Q150 15, 160 20 M143 30 Q150 35, 157 30" stroke="#90BE6D" fill="none" stroke-width="1.5"/>
+                    
+                    <!-- Arms -->
+                    <rect x="180" y="0" width="50" height="50" fill="none" stroke="#90BE6D" stroke-width="1.5" rx="6"/>
+                    <path d="M195 20 L215 20 M205 20 L205 35 M198 35 L212 35" stroke="#90BE6D" fill="none" stroke-width="1.5"/>
+                    
+                    <!-- Speech -->
+                    <rect x="235" y="0" width="50" height="50" fill="none" stroke="#90BE6D" stroke-width="1.5" rx="6"/>
+                    <path d="M250 25 Q260 20, 270 25 M253 30 Q260 35, 267 30" stroke="#90BE6D" fill="none" stroke-width="1.5"/>
+                    
+                    <!-- Time -->
+                    <rect x="290" y="0" width="50" height="50" fill="none" stroke="#90BE6D" stroke-width="1.5" rx="6"/>
+                    <circle cx="315" cy="25" r="12" stroke="#90BE6D" fill="none" stroke-width="1.5"/>
+                    <line x1="315" y1="17" x2="315" y2="25" stroke="#90BE6D" stroke-width="1.5"/>
+                    <line x1="315" y1="25" x2="323" y2="25" stroke="#90BE6D" stroke-width="1.5"/>
+                </g>
+            
+                <!-- Text Row -->
+                <g transform="translate(15, 120)">
+                    <text x="40" y="0" text-anchor="middle" font-size="12" fill="#E091E0">Balance</text>
+                    <text x="95" y="0" text-anchor="middle" font-size="12" fill="#E091E0">Eyes</text>
+                    <text x="150" y="0" text-anchor="middle" font-size="12" fill="#90BE6D">Face</text>
+                    <text x="205" y="0" text-anchor="middle" font-size="12" fill="#90BE6D">Arms</text>
+                    <text x="260" y="0" text-anchor="middle" font-size="12" fill="#90BE6D">Speech</text>
+                    <text x="315" y="0" text-anchor="middle" font-size="12" fill="#90BE6D">Time</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Share Button -->
+        <button class="share-button" onclick="captureAndShare()">
+            Share with my Patient
+        </button>
+    </div>
+
+    <script>
+        async function captureAndShare() {
+            try {
+                const videoImg = document.querySelector('.circular-frame img');
+                const canvas = document.createElement('canvas');
+                canvas.width = videoImg.naturalWidth;
+                canvas.height = videoImg.naturalHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(videoImg, 0, 0);
+                
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
+                const file = new File([blob], 'stroke-detection.jpg', { type: 'image/jpeg' });
+                
+                if (navigator.share) {
+                    await navigator.share({
+                        files: [file],
+                        title: 'Stroke Detection Results',
+                        text: 'Check out these stroke detection results. Remember BE FAST!'
+                    });
+                } else {
+                    const a = document.createElement('a');
+                    a.href = canvas.toDataURL('image/jpeg');
+                    a.download = 'stroke-detection.jpg';
+                    a.click();
+                }
+            } catch (err) {
+                console.error('Error sharing:', err);
+                alert('Unable to share. You can try taking a screenshot instead.');
+            }
+        }
+    </script>
+</body>
+</html>
